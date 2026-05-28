@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cip5t74fmsdmb"
-path="res://.godot/imported/Popo.png-e25cdd3cd612058361fcb06b32354106.ctex"
+uid="uid://dotsbuj8ob38q"
+path="res://.godot/imported/Flower.png-3a7b8d1db86898f6c0c9017407cb83b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Popo.png"
-dest_files=["res://.godot/imported/Popo.png-e25cdd3cd612058361fcb06b32354106.ctex"]
+source_file="res://Sprites/UI/Flower.png"
+dest_files=["res://.godot/imported/Flower.png-3a7b8d1db86898f6c0c9017407cb83b7.ctex"]
 
 [params]
 

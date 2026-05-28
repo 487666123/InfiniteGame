@@ -2,7 +2,7 @@ using Godot;
 
 namespace InfiniteGame.Scripts;
 
-public partial class 菜单选项 : VBoxContainer
+public partial class MainMenu : Control
 {
 	[Export]
 	public Button PlayGame { get; set; }
@@ -26,12 +26,14 @@ public partial class 菜单选项 : VBoxContainer
 
 	Tween _tween;
 
-	float _fadeDuration = 2f;
-	float _endThreshold = 3f;
+	readonly float _fadeDuration = 2f;
+	readonly float _endThreshold = 3f;
+
 	bool _isFadingOut;
 
 	public override void _Ready()
 	{
+		PlayGame.Pressed += OnPlayGamePressed;
 		ExitGame.Pressed += OnExitGamePressed;
 		MoveBgMusic.Pressed += MoveBgMusicToEnd;
 
@@ -69,6 +71,11 @@ public partial class 菜单选项 : VBoxContainer
 		_tween.TweenProperty(_bgMusic, "volume_db", targetDb, _fadeDuration)
 			.SetEase(Tween.EaseType.In)
 			.SetTrans(Tween.TransitionType.Sine);
+	}
+
+	private void OnPlayGamePressed()
+	{
+		GetTree().ChangeSceneToFile("res://Scenes/MainGame.tscn");
 	}
 
 	private void OnExitGamePressed()

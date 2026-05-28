@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dm7vl7x2k56xm"]
+
+[ext_resource type="PackedScene" uid="uid://ggcwgumoqia3" path="res://Scenes/MenuButton.tscn" id="1_4f8b7"]
+[ext_resource type="Script" uid="uid://bia1riki6wfau" path="res://Scripts/GameMenu.cs" id="1_sj0hj"]
+
+[node name="GameMenu" type="Control" unique_id=1923572335 node_paths=PackedStringArray("ReturnMainMenuButton", "ContinueGameButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sj0hj")
+ReturnMainMenuButton = NodePath("VBoxContainer/返回主菜单")
+ContinueGameButton = NodePath("VBoxContainer/继续游戏")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1634173470]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1808580440]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -78.0
+offset_right = 88.0
+offset_bottom = 78.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+
+[node name="返回主菜单" parent="VBoxContainer" unique_id=224953699 instance=ExtResource("1_4f8b7")]
+layout_mode = 2
+text = "返回主菜单"
+
+[node name="继续游戏" parent="VBoxContainer" unique_id=497077145 instance=ExtResource("1_4f8b7")]
+layout_mode = 2
+text = "继续游戏"
