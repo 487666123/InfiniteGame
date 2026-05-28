@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://bsxxmslhujwl6"]
+
+[ext_resource type="Shader" uid="uid://pe8bq74eo225" path="res://Shaders/scroll.gdshader" id="1_8um5k"]
+[ext_resource type="Texture2D" uid="uid://dotsbuj8ob38q" path="res://Sprites/Flower.png" id="2_vasrq"]
+[ext_resource type="Shader" uid="uid://2m43jpgqg8c8" path="res://Shaders/scroll2.gdshader" id="3_7pekp"]
+[ext_resource type="Script" uid="uid://2ybndpl3e3xm" path="res://Scripts/菜单选项.cs" id="3_ysxey"]
+[ext_resource type="Texture2D" uid="uid://dbt6yfktpj66q" path="res://Sprites/BK.png" id="4_257lx"]
+[ext_resource type="PackedScene" uid="uid://ggcwgumoqia3" path="res://Scenes/MenuButton.tscn" id="4_vasrq"]
+[ext_resource type="AudioStream" uid="uid://p8p5qbobeonh" path="res://Sounds/背景音乐.mp3" id="7_7pekp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rrcx7"]
+shader = ExtResource("1_8um5k")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_36nn4"]
+shader = ExtResource("3_7pekp")
+
+[node name="MainMenu" type="Control" unique_id=612817080]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="背景" type="Control" parent="." unique_id=936044262]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="背景色" type="ColorRect" parent="背景" unique_id=797855099]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.7372549, 0.34901962, 1)
+
+[node name="循环滚动背景" type="TextureRect" parent="背景" unique_id=930109714]
+modulate = Color(1, 1, 1, 0.39215687)
+material = SubResource("ShaderMaterial_rrcx7")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_vasrq")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="循环滚动背景2" type="TextureRect" parent="背景" unique_id=2037073534]
+modulate = Color(1, 1, 1, 0.39215687)
+material = SubResource("ShaderMaterial_36nn4")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_257lx")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="主菜单" type="VBoxContainer" parent="." unique_id=388226677]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
+offset_top = -181.5
+offset_right = 224.0
+offset_bottom = 181.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 64
+
+[node name="标题" type="Label" parent="主菜单" unique_id=631628239]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 128
+text = "Infine"
+horizontal_alignment = 1
+
+[node name="菜单选项" type="VBoxContainer" parent="主菜单" unique_id=813200783 node_paths=PackedStringArray("PlayGame", "GameSettings", "ExitGame", "MoveBgMusic")]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 24
+script = ExtResource("3_ysxey")
+PlayGame = NodePath("开始")
+GameSettings = NodePath("设置")
+ExitGame = NodePath("退出")
+MoveBgMusic = NodePath("背景音乐测试")
+BgAudioStream = ExtResource("7_7pekp")
+
+[node name="开始" parent="主菜单/菜单选项" unique_id=224953699 instance=ExtResource("4_vasrq")]
+layout_mode = 2
+text = "开始"
+
+[node name="设置" parent="主菜单/菜单选项" unique_id=1223391747 instance=ExtResource("4_vasrq")]
+layout_mode = 2
+text = "设置"
+
+[node name="退出" parent="主菜单/菜单选项" unique_id=741418459 instance=ExtResource("4_vasrq")]
+layout_mode = 2
+text = "退出"
+
+[node name="背景音乐测试" parent="主菜单/菜单选项" unique_id=1700521711 instance=ExtResource("4_vasrq")]
+layout_mode = 2
+text = "背景音乐测试"

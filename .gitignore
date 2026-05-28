@@ -1,0 +1,22 @@
+# Godot 4+
+.godot/
+/android/
+
+# C# / .NET build artifacts
+bin/
+obj/
+*.csproj.old
+*.sln.DotSettings.user
+
+# IDE (Rider / VS / VS Code)
+.idea/
+.vs/
+.vscode/
+
+# OS
+Thumbs.db
+.DS_Store
+Desktop.ini
+
+# Export (may contain secrets)
+export_presets.cfg

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ggcwgumoqia3"]
+
+[ext_resource type="FontFile" uid="uid://d3d1q6eroxev1" path="res://Fonts/HarmonyOS_SansSC_Medium.ttf" id="1_h6npt"]
+[ext_resource type="StyleBox" uid="uid://doeoxv5k2dfry" path="res://Theme/Button/MainButton.tres" id="2_jgwjj"]
+[ext_resource type="Script" uid="uid://dxx55gd5mvjjg" path="res://Scripts/ButtonFeedback.cs" id="3_ccwyx"]
+[ext_resource type="AudioStream" uid="uid://da7qf0lnbfggm" path="res://Sounds/按钮悬浮音效.mp3" id="4_rvkx3"]
+
+[sub_resource type="Theme" id="Theme_fh7cp"]
+default_font = ExtResource("1_h6npt")
+
+[node name="开始" type="Button" unique_id=224953699]
+theme = SubResource("Theme_fh7cp")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("2_jgwjj")
+theme_override_styles/pressed = ExtResource("2_jgwjj")
+theme_override_styles/hover = ExtResource("2_jgwjj")
+theme_override_styles/disabled = ExtResource("2_jgwjj")
+theme_override_styles/focus = ExtResource("2_jgwjj")
+text = "请输入文本"
+
+[node name="ButtonFeedback" type="Node" parent="." unique_id=878802292]
+script = ExtResource("3_ccwyx")
+HoverSound = ExtResource("4_rvkx3")
+metadata/_custom_type_script = "uid://dxx55gd5mvjjg"
