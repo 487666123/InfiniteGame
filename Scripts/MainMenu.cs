@@ -1,5 +1,6 @@
 using Godot;
-using System;
+
+namespace InfiniteGame.Scripts;
 
 public partial class 菜单选项 : VBoxContainer
 {
@@ -31,7 +32,6 @@ public partial class 菜单选项 : VBoxContainer
 
 	public override void _Ready()
 	{
-		PlayGame.Pressed += OnPlayGamePressed;
 		ExitGame.Pressed += OnExitGamePressed;
 		MoveBgMusic.Pressed += MoveBgMusicToEnd;
 
@@ -69,11 +69,6 @@ public partial class 菜单选项 : VBoxContainer
 		_tween.TweenProperty(_bgMusic, "volume_db", targetDb, _fadeDuration)
 			.SetEase(Tween.EaseType.In)
 			.SetTrans(Tween.TransitionType.Sine);
-	}
-
-	private void OnPlayGamePressed()
-	{
-		GetTree().ChangeSceneToFile("res://BlockWorld/BlockWorld.tscn");
 	}
 
 	private void OnExitGamePressed()

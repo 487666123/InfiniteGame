@@ -1,5 +1,7 @@
 using Godot;
 
+namespace InfiniteGame.Scripts;
+
 /// <summary>
 /// 支持 hover 动画和 hover 音效
 /// </summary>
